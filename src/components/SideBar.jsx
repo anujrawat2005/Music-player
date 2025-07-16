@@ -16,7 +16,7 @@ const SideBar = () => {
 
             </div>
             <div className="flex items-center gap-3 pl-8 cursor-pointer">
-                <img  className="w-6" src={assets.search_icon} alt='search'/> //hello
+                <img  className="w-6" src={assets.search_icon} alt='search'/>
                 <p placeholder="time to search" className="font-bold">
                     Search
                 </p>
