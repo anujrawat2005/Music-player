@@ -4,17 +4,25 @@ import { PlayerContext } from '../context/PlayerContext'
 
 const Player = () => {
 
+  // Destructure values and functions from the PlayerContext
+  // These props are provided by the PlayerContextProvider, allowing the player to control and display song state.
+
 
   const {track,seekBar,seekBg,playStatus,play,pause,time,previous,next,seekSong} = useContext(PlayerContext);
   return (
+    // Main container for the player bar, fixed height, black background, flex layout
     <div className="h-[10%] bg-black flex justify-between items-center text-white px-4">
+        {/* Left section: Current song details (hidden on small screens, visible on large) */}
         <div className="hidden lg:flex items-center gap-4">
+              {/* Song image */}
             <img className="w-12" src={track.image} alt="image" />
         <div>
+            {/*Song name */}
           <p>{track.name}</p>
           <p>{track.desc.slice(0,12)}</p>
         </div>
         </div>
+        {/* Middle section: Playback controls and seek bar */}
         <div className="flex flex-col items-center gap-1 m-auto">
             <div className="flex gap-4">
                 <img className="w-4 cursor-pointer" src={assets.shuffle_icon} alt=""/>
@@ -58,4 +66,4 @@ const Player = () => {
   )
 }
 
-export default Player
+export default Player ; //Export player component to other part of application to use

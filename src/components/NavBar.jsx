@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom'
 
 const NavBar = () => {
 
-  const navigate = useNavigate();
+  const navigate = useNavigate();  // Initialize the navigate function from the hook
+
   return (
     <>
     <div className="w-full flex justify-between items-center font-semibold">
+       {/* Navigation arrows (back/forward in browser history) */}
         <div className="flex items-center gap-2">
             <img onClick={()=> navigate(-1)} className="w-8   bg-black p-2 rounded-2xl cursor-pointer" src={assets.arrow_left} alt=""/>
             <img onClick={()=> navigate(1)} className="w-8 bg-black p-2 rounded-2xl cursor-pointer" src={assets.arrow_right} alt=""/>
@@ -32,4 +34,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar;
+export default NavBar; //Export navbar component to other part of application for use
